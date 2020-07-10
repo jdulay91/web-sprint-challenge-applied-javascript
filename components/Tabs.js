@@ -32,6 +32,7 @@ axios
         const allCardsArray = Array.from(document.getElementsByClassName('card'))
         for(let i=0 ; i<allCardsArray.length; i++){
             if (allCardsArray[i].classList.contains('javascriptStretch')){
+                allCardsArray[i].style.display = 'block'
             }else{
                 allCardsArray[i].style.display = 'none'
             }
@@ -42,6 +43,7 @@ axios
         const allCardsArray = Array.from(document.getElementsByClassName('card'))
         for(let i=0 ; i<allCardsArray.length; i++){
             if (allCardsArray[i].classList.contains('bootStrapStretch')){
+                allCardsArray[i].style.display = 'block'
             }else{
                 allCardsArray[i].style.display = 'none'
             }
@@ -52,6 +54,7 @@ axios
         const allCardsArray = Array.from(document.getElementsByClassName('card'))
         for(let i=0 ; i<allCardsArray.length; i++){
             if (allCardsArray[i].classList.contains('technologyStretch')){
+                allCardsArray[i].style.display = 'block'
             }else{
                 allCardsArray[i].style.display = 'none'
             }
@@ -62,6 +65,7 @@ axios
         const allCardsArray = Array.from(document.getElementsByClassName('card'))
         for(let i=0 ; i<allCardsArray.length; i++){
             if (allCardsArray[i].classList.contains('jqueryStretch')){
+                allCardsArray[i].style.display = 'block'
             }else{
                 allCardsArray[i].style.display = 'none'
             }
@@ -72,6 +76,7 @@ axios
         const allCardsArray = Array.from(document.getElementsByClassName('card'))
         for(let i=0 ; i<allCardsArray.length; i++){
             if (allCardsArray[i].classList.contains('nodeStretch')){
+                allCardsArray[i].style.display = 'block'
             }else{
                 allCardsArray[i].style.display = 'none'
             }
