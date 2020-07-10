@@ -23,24 +23,45 @@
 
 axios
 .get('https://lambda-times-backend.herokuapp.com/articles')
-.then( res =>{
-    const megaArray = [res.data.articles.bootstrap,res.data.articles.javascript,res.data.articles.jquery,res.data.articles.node,res.data.articles.technology]
-    // const bootStrapArray = res.data.articles.bootstrap
-    // const javaScriptArray = res.data.articles.javascript
-    // const jqueryArray = res.data.articles.jquery
-    // const nodeArray = res.data.articles.node
-    // const technologyArray = res.data.articles.technology
-    megaArray.forEach(array=>{
-        array.forEach(element=>{
-            articleMaker(element)
-        })
-    })        
+.then( res =>{    
+    // const megaArray = [res.data.articles.bootstrap,res.data.articles.javascript,res.data.articles.jquery,res.data.articles.node,res.data.articles.technology]
+    // megaArray.forEach(array=>{
+    //     array.forEach(element=>{
+    //         articleMaker(element)
+    //     })
+    // })
+    const bootStrapArray = res.data.articles.bootstrap    
+    bootStrapArray.forEach(element => {
+        articleMaker(element,'bootStrapStretch')
+    });
+    
+    const javascriptArray = res.data.articles.javascript
+    javascriptArray.forEach(element => {
+        articleMaker(element,'javascriptStretch')
+    });
+
+    const jqueryArray = res.data.articles.jquery;
+    jqueryArray.forEach(element=>{
+        articleMaker(element,'jqueryStretch')
+    })
+
+    const nodeArray = res.data.articles.node
+    nodeArray.forEach(element=>{
+        articleMaker(element,'nodeStretch')
+    })
+
+    const technologyArray = res.data.articles.technology
+    technologyArray.forEach(element=>{
+        articleMaker(element,'technologyStretch')
+    })
+
+
 })
 .catch(err=>{
     console.log(err)
 })
 
-const articleMaker= (dataObject) => {
+const articleMaker= (dataObject,stretchClass) => {
     
     //element Creation
     const outerDiv = document.createElement('div');
@@ -52,6 +73,7 @@ const articleMaker= (dataObject) => {
 
     //class
     outerDiv.classList.add('card');
+    outerDiv.classList.add(stretchClass)    
     firstChildDiv.classList.add('headline');
     secondChildDiv.classList.add('author')
     firstGrandChildDiv.classList.add('img-container')
@@ -77,3 +99,15 @@ const articleMaker= (dataObject) => {
     divCardContainer.appendChild(outerDiv)    
 }
 
+//stretch
+
+
+
+
+
+
+// javascriptTab
+// bootstrapTab
+// technologyTab
+// jqueryTab
+// nodeTab
