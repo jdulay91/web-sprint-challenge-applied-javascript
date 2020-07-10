@@ -20,3 +20,60 @@
 // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
+
+axios
+.get('https://lambda-times-backend.herokuapp.com/articles')
+.then( res =>{
+    const megaArray = [res.data.articles.bootstrap,res.data.articles.javascript,res.data.articles.jquery,res.data.articles.node,res.data.articles.technology]
+    // const bootStrapArray = res.data.articles.bootstrap
+    // const javaScriptArray = res.data.articles.javascript
+    // const jqueryArray = res.data.articles.jquery
+    // const nodeArray = res.data.articles.node
+    // const technologyArray = res.data.articles.technology
+    megaArray.forEach(array=>{
+        array.forEach(element=>{
+            articleMaker(element)
+        })
+    })        
+})
+.catch(err=>{
+    console.log(err)
+})
+
+const articleMaker= (dataObject) => {
+    
+    //element Creation
+    const outerDiv = document.createElement('div');
+    const firstChildDiv = document.createElement('div');
+    const secondChildDiv = document.createElement('div');
+    const firstGrandChildDiv = document.createElement('div');
+    const imageOfAuthor = document.createElement('img');
+    const spanAuthor = document.createElement('span');
+
+    //class
+    outerDiv.classList.add('card');
+    firstChildDiv.classList.add('headline');
+    secondChildDiv.classList.add('author')
+    firstGrandChildDiv.classList.add('img-container')
+    imageOfAuthor.setAttribute('src',dataObject.authorPhoto)
+
+    //textContent
+    firstChildDiv.textContent = dataObject.headline;
+    spanAuthor.textContent = `By ${dataObject.authorName}`
+
+    //structure
+    outerDiv.appendChild(firstChildDiv)
+    outerDiv.appendChild(secondChildDiv)
+    secondChildDiv.appendChild(firstGrandChildDiv)
+    firstGrandChildDiv.appendChild(imageOfAuthor)
+    secondChildDiv.appendChild(spanAuthor)
+
+    outerDiv.addEventListener('click', () =>{
+        console.log(dataObject.headline)
+    })
+
+    //appending
+    const divCardContainer = document.querySelector('.cards-container')
+    divCardContainer.appendChild(outerDiv)    
+}
+
