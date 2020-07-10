@@ -93,8 +93,8 @@ axios
 
 const divTabTargetter = document.querySelector('.topics')
 
-const bootStrapClass = document.getElementsByClassName('bootStrapStretch')
-const javaScriptClass = document.getElementsByClassName('javascriptStretch')
-const technologyClass = document.getElementsByClassName('technologyStretch')
-const nodeClass = document.getElementsByClassName('nodeStretch')
-const jqueryClass = document.getElementsByClassName('jqueryStretch')
+// const bootStrapClass = document.getElementsByClassName('bootStrapStretch')
+// const javaScriptClass = document.getElementsByClassName('javascriptStretch')
+// const technologyClass = document.getElementsByClassName('technologyStretch')
+// const nodeClass = document.getElementsByClassName('nodeStretch')
+// const jqueryClass = document.getElementsByClassName('jqueryStretch')

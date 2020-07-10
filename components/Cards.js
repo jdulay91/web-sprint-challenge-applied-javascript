@@ -105,9 +105,3 @@ const articleMaker= (dataObject,stretchClass) => {
 
 
 
-
-// javascriptTab
-// bootstrapTab
-// technologyTab
-// jqueryTab
-// nodeTab
